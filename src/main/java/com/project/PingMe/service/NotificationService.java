@@ -23,6 +23,8 @@ public class NotificationService {
     private AsyncNotificationWorker asyncNotificationWorker;
     @Autowired
     private RateLimitService rateLimitService;
+    @Autowired
+    private AIEnhancerService aiEnhancerService;
 
     @Autowired
     private List<NotificationChannel> channels;
@@ -43,6 +45,10 @@ public class NotificationService {
 
     public NotificationRes processNotification(NotificationReq notificationReq) {
         rateLimitService.checkRateLimit(notificationReq.getRecipient());
+
+        String message = aiEnhancerService.enhanceMessage(notificationReq.getMessage());
+        notificationReq.setMessage(message);
+
         NotificationLog log = new NotificationLog();
         log.setChannel(notificationReq.getChannel());
         log.setMessage(notificationReq.getMessage());

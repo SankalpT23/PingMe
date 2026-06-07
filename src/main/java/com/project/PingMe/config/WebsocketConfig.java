@@ -1,4 +1,26 @@
 package com.project.PingMe.config;
 
-public class WebsocketConfig {
+import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+
+@Configuration
+@EnableWebSocketMessageBroker
+public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
+
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        //Frontend Connection Point
+        registry.addEndpoint("/ws") // client will connect from here
+                .setAllowedOrigins("*") // Without CORS Error
+                .withSockJS(); // Fallback enable
+    }
+
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+        registry.enableSimpleBroker("/topic"); //For Subscription
+        registry.setApplicationDestinationPrefixes("/app"); // For Sending
+    }
 }
