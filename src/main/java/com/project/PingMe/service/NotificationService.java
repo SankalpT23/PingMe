@@ -37,7 +37,16 @@ public class NotificationService {
     {
         for (NotificationChannel channel : channels)
         {
-            channelMap.put(channel.getType(), channel);
+            Channel type = channel.getType();
+            if (type == null) {
+                throw new IllegalStateException("NotificationChannel " + channel.getClass().getSimpleName() + " returned a null type.");
+            }
+
+            if (!channelMap.containsKey(type)) {
+                channelMap.put(type, channel);
+            } else {
+                throw new RuntimeException("Channel type " + type + " is already set by another bean.");
+            }
         }
     }
 

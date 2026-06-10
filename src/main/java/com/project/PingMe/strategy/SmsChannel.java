@@ -10,7 +10,7 @@ public class SmsChannel implements NotificationChannel {
 
     @Override
     public Channel getType() {
-        return null;
+        return Channel.SMS;
     }
 
 

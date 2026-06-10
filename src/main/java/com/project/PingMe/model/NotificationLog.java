@@ -18,6 +18,7 @@ public class NotificationLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(length = 200)
     private String message;
     private String recipient;
 

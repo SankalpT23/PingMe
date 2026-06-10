@@ -15,6 +15,7 @@ public class AIEnhancerService {
                 "Rewrite the following raw message into a highly professional, " +
                 "polite, and concise corporate notification alert. " +
                 "Do not add any extra explanations, just output the final message. " +
+                "Enhance this notification message to be more polite and professional. You must keep the final response strictly under 200 characters. Do not include any conversational filler."+
                 "Raw Message: " + message;
 
         //Send OpenAI the prompt and Take the Message

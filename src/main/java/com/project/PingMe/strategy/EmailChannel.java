@@ -13,6 +13,6 @@ public class EmailChannel implements NotificationChannel {
 
     @Override
     public Channel getType() {
-        return null;
+        return Channel.EMAIL;
     }
 }
