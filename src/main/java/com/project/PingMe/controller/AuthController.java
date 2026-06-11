@@ -2,6 +2,7 @@ package com.project.PingMe.controller;
 
 import com.project.PingMe.dto.request.LoginRequest;
 import com.project.PingMe.dto.request.RegisterRequest;
+import com.project.PingMe.dto.response.AuthResponse;
 import com.project.PingMe.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,8 +25,8 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest loginRequest) {
         String token = authService.login(loginRequest);
-        return new ResponseEntity<>(token, HttpStatus.OK);
+        return new ResponseEntity<>(new AuthResponse(token), HttpStatus.OK);
     }
 }

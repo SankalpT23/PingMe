@@ -30,6 +30,7 @@ public class AuthService {
         saveduser.setUsername(registerRequest.getUsername());
         saveduser.setEmail(registerRequest.getEmail());
         saveduser.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
+        saveduser.setCreatedAt(java.time.LocalDateTime.now());
         userRepository.save(saveduser);
         //Return Message to User
         return "User registered successfully";

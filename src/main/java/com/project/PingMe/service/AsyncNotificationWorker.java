@@ -18,7 +18,7 @@ public class AsyncNotificationWorker {
     @Autowired
     private NotificationLogRepo repository;
 
-    @Async
+    @Async("taskExecutor")
     public void sendAsync(NotificationReq notificationReq, NotificationLog savedLog, Map<Channel, NotificationChannel> channelMap ) {
         NotificationChannel channel = channelMap.get(notificationReq.getChannel());
 

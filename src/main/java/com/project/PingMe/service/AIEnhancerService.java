@@ -19,8 +19,8 @@ public class AIEnhancerService {
                 "Raw Message: " + message;
 
         //Send OpenAI the prompt and Take the Message
-        String enchancedMessage = chatModel.call(promt);
+        String enhancedMessage = chatModel.call(promt);
         //Return the refined message back to pipeline
-        return enchancedMessage;
+        return enhancedMessage;
     }
 }
