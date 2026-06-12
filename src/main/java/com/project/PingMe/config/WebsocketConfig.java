@@ -14,7 +14,7 @@ public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         //Frontend Connection Point
         registry.addEndpoint("/ws") // client will connect from here
-                .setAllowedOrigins("*") // Without CORS Error
+                .setAllowedOriginPatterns("*") // Without CORS Error
                 .withSockJS(); // Fallback enable
     }
 

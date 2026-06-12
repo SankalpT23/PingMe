@@ -11,9 +11,9 @@
 	<groupId>com.project</groupId>
 	<artifactId>PingMe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
-	<url/>
+	<name>PingMe</name>
+	<description>Centralized Notification Microservice — Email, SMS, WebSocket with AI Enhancement</description>
+	<url>https://github.com/SankalpT23/PingMe</url>
 	<licenses>
 		<license/>
 	</licenses>
