@@ -1,0 +1,121 @@
+.log-card {
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  animation-delay: 0.3s;
+}
+
+.log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.log-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.log-icon {
+  font-size: 1.25rem;
+}
+
+.log-count {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  background: var(--info-bg);
+  color: var(--info);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.log-empty {
+  padding: 2rem;
+  text-align: center;
+}
+
+.log-empty .empty-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* ── Table ── */
+.log-table-wrapper {
+  overflow-x: auto;
+}
+
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.log-table thead th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.log-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.log-table tbody tr:hover {
+  background: var(--bg-card);
+}
+
+.log-table tbody td {
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.log-id {
+  font-weight: 600;
+  color: var(--text-accent);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.channel-tag {
+  font-size: 1.125rem;
+}
+
+/* ── Status Badges ── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.badge-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.badge-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.badge-error {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.badge-info {
+  background: var(--info-bg);
+  color: var(--info);
+}
